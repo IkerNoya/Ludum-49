@@ -46,8 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
         velocity = Vector3.forward * horizontalInput * movementMultiplier * movementForce;
 
-        if (rb.velocity.y <= -10f)
-            rb.velocity = new Vector3(rb.velocity.x, -10f, rb.velocity.z);
+        //if (rb.velocity.y <= -10f)
+        //    rb.velocity = new Vector3(rb.velocity.x, -10f, rb.velocity.z);
 
         if (!rotateLeft)
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * rotationSpeed);
