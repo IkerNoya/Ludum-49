@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] float groundDistance = 0;
     [SerializeField] LayerMask groundMask = 0;
+    [SerializeField] Transform groundCheck = null;
 
     private Rigidbody rb = null;
     private RaycastHit hit;
@@ -38,16 +39,14 @@ public class PlayerMovement : MonoBehaviour
 
         Inputs();
 
-        if (Physics.Raycast(transform.position, Vector3.down, groundDistance, groundMask))
-        {
-            grounded = true;
-        }
-        else grounded = false;
+        grounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         velocity = Vector3.forward * horizontalInput * movementMultiplier * movementForce;
 
-        //if (rb.velocity.y <= -10f)
-        //    rb.velocity = new Vector3(rb.velocity.x, -10f, rb.velocity.z);
+        if (grounded) velocity.y = 0;
+
+        if (rb.velocity.y <= -20f)
+            rb.velocity = new Vector3(rb.velocity.x, -20f, rb.velocity.z);
 
         if (!rotateLeft)
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * rotationSpeed);
@@ -75,6 +74,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, Vector3.down * groundDistance);
+        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
     }
 }
