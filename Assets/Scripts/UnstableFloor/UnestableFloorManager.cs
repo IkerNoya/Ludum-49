@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class UnestableFloorManager : MonoBehaviour
 {
-    public void DestroyProcces()
+    Rigidbody rb = null;
+    public void DestroyProcces(float time)
     {
-        Destroy(gameObject);
+        if (rb == null) rb = gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = true;
+        rb.isKinematic = false;
+
+        Destroy(gameObject, time);
     }
 }
