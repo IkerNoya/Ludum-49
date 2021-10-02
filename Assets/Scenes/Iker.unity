@@ -3095,7 +3095,7 @@ GameObject:
   - component: {fileID: 1228566949}
   - component: {fileID: 1228566948}
   - component: {fileID: 1228566947}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3188,7 +3188,7 @@ GameObject:
   - component: {fileID: 1232737452}
   - component: {fileID: 1232737451}
   - component: {fileID: 1232737450}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3948,6 +3948,31 @@ PrefabInstance:
         type: 3}
       propertyPath: groundDistance
       value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578837062771987696, guid: 5770a3725aef9f142a4206244ad48137,
+        type: 3}
+      propertyPath: wallGravityScale
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578837062771987696, guid: 5770a3725aef9f142a4206244ad48137,
+        type: 3}
+      propertyPath: wallDistance
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578837062771987696, guid: 5770a3725aef9f142a4206244ad48137,
+        type: 3}
+      propertyPath: leftWall.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578837062771987696, guid: 5770a3725aef9f142a4206244ad48137,
+        type: 3}
+      propertyPath: rightWall.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578837062771987696, guid: 5770a3725aef9f142a4206244ad48137,
+        type: 3}
+      propertyPath: wallJumpForce
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8578837062771987698, guid: 5770a3725aef9f142a4206244ad48137,
         type: 3}
