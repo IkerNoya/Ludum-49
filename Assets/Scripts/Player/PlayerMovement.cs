@@ -20,10 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb = null;
     private RaycastHit hit;
 
-    Vector3 velocity;
+    private Vector3 velocity;
 
     private float horizontalInput = 0;
     private bool grounded = false;
+    private bool rotateLeft = false;
 
 
     private void Start()
@@ -48,9 +49,9 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y <= -10f)
             rb.velocity = new Vector3(rb.velocity.x, -10f, rb.velocity.z);
 
-        if (horizontalInput > 0)
+        if (!rotateLeft)
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * rotationSpeed);
-        else if(horizontalInput < 0)
+        else 
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * rotationSpeed);
     }
 
@@ -61,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             grounded = false;
         }
+        if (horizontalInput > 0)
+            rotateLeft = false;
+        else if (horizontalInput < 0)
+            rotateLeft = true;
     }
     private void FixedUpdate()
     {

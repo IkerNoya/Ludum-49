@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: cca1d9a2379d27947867b28187987bba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementForce: 5
   movementMultiplier: 1
+  rotationSpeed: 10
   jumpKey: 32
   jumpForce: 10
   gravityScale: 2
@@ -263,5 +264,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 8578837062771987698}
   followSpeed: 5
-  xOffset: 7.78
+  xOffset: -7.78
   yOffset: 3.65
