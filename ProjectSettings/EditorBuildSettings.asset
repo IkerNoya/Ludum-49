@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hernan.unity
     guid: 0de3015a51821b147b9119dc30bbe90d
+  - enabled: 1
+    path: Assets/Scenes/Hernan0.unity
+    guid: d4a791e5392522a489631dd713fd8aac
+  - enabled: 1
+    path: Assets/Scenes/Hernan1.unity
+    guid: 27d1ea8d828efaa44b7bfdfb108db3c7
   m_configObjects: {}

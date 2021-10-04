@@ -7,6 +7,7 @@ public class PlayerInteractions : MonoBehaviour
 {
     [SerializeField] KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] UnityEvent pauseGame;
+    [SerializeField] UnityEvent reloadGame;
 
     private void Update() 
     {

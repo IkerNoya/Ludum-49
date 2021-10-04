@@ -54,4 +54,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void PassLevel(string level)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(level);
+    }
 }
