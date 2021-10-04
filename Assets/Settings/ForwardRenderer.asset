@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3078876a940844daba365cfac61fa4, type: 3}
   m_Name: NewMyBlitFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     IsEnabled: 1
     WhenToInsert: 550
