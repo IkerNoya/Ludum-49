@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Sounds")]
+    [SerializeField] UnityEvent jumpSound;
     [Header("Movement")]
     [SerializeField] float movementForce = 0;
     [SerializeField] float movementMultiplier = 0;
@@ -86,11 +89,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(jumpKey) && grounded)
         {
+            jumpSound?.Invoke();
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             grounded = false;
         }
         if (Input.GetKeyDown(jumpKey) && isInWall && !jumpedOffWall)
         {
+            jumpSound?.Invoke();
             jumpedOffWall = true;
             isInWall = false;
             rb.AddForce((wallHit.normal + Vector3.up) * wallJumpForce, ForceMode.Impulse);

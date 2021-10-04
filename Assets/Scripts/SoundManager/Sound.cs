@@ -17,4 +17,14 @@ public class Sound : MonoBehaviour
     {
         aSource.volume = manager.volume;
     }
+
+    public void StartSound()
+    {
+        aSource.Play();
+    }
+
+    public void StopSoound()
+    {
+        aSource.Stop();
+    }
 }
