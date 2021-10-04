@@ -1,5 +1,6 @@
 ﻿Shader "VHS-Reference"
 {
+    // shader from https://halisavakis.com/write-up-vhs-image-effect/
     Properties
     {
         _MainTex("Texture", 2D) = "white" {}
