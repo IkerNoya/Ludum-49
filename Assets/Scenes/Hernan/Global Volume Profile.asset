@@ -52,63 +52,7 @@ MonoBehaviour:
   components:
   - {fileID: 8885951813347458923}
   - {fileID: 2925537020130208487}
-  - {fileID: 1886462690830970829}
   - {fileID: -376996110431999768}
-  - {fileID: 243202538689363600}
---- !u!114 &243202538689363600
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
-  m_Name: FilmGrain
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  type:
-    m_OverrideState: 1
-    m_Value: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.7
-    min: 0
-    max: 1
-  response:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
-  texture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
---- !u!114 &1886462690830970829
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
-  m_Name: WhiteBalance
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  temperature:
-    m_OverrideState: 1
-    m_Value: -50
-    min: -100
-    max: 100
-  tint:
-    m_OverrideState: 1
-    m_Value: 100
-    min: -100
-    max: 100
 --- !u!114 &2925537020130208487
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -153,7 +97,7 @@ MonoBehaviour:
     max: 32
   focalLength:
     m_OverrideState: 1
-    m_Value: 107
+    m_Value: 101
     min: 1
     max: 300
   bladeCount:
@@ -187,15 +131,15 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 0
-    m_Value: 0.57
+    m_Value: 1.64
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 8
     min: 0
   scatter:
     m_OverrideState: 0
-    m_Value: 0.7
+    m_Value: 0.18
     min: 0
     max: 1
   clamp:
@@ -204,7 +148,7 @@ MonoBehaviour:
     min: 0
   tint:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.9339623, g: 0, b: 0.8288811, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2947105715595827108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.445, z: 0}
+  m_LocalPosition: {x: 0, y: -0.114, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8578837062771987698}
@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 8578837062771987701}
   - component: {fileID: 8578837062771987700}
   - component: {fileID: 8578837062771987696}
+  - component: {fileID: 2333807359055984954}
+  - component: {fileID: 1477865410412927005}
   - component: {fileID: 8578837062771987703}
   - component: {fileID: 8578837062771987699}
   m_Layer: 9
@@ -137,6 +139,40 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 1927508369833887286}
+  wallJumpForce: 0
+  wallDistance: 0
+  wallGravityScale: 0
+--- !u!114 &2333807359055984954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578837062771987702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3091631f05ead94daa25b810edc56bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1477865410412927005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578837062771987702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9fb80b687f049a46b3326d7e936b5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseKey: 27
+  pauseGame:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &8578837062771987703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,8 +245,8 @@ Camera:
   m_GameObject: {fileID: 8578837063460616767}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -273,7 +309,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
