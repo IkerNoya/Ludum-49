@@ -49,10 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
         grounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
- 
-        
-
-        isInWall = Physics.Raycast(transform.position, transform.forward, out wallHit, wallDistance);
+        if(!jumpedOffWall)
+            isInWall = Physics.Raycast(transform.position, transform.forward, out wallHit, wallDistance);
 
         if (grounded)
         {
@@ -60,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             hasSetWallVelocity = false;
             isInWall = false;
+            jumpedOffWall = false;
         }
         else
         {
@@ -81,7 +80,6 @@ public class PlayerMovement : MonoBehaviour
             else 
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * rotationSpeed);
         }
-
     }
 
     void Inputs()
@@ -91,8 +89,9 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             grounded = false;
         }
-        if (Input.GetKeyDown(jumpKey) && isInWall)
+        if (Input.GetKeyDown(jumpKey) && isInWall && !jumpedOffWall)
         {
+            jumpedOffWall = true;
             isInWall = false;
             rb.AddForce((wallHit.normal + Vector3.up) * wallJumpForce, ForceMode.Impulse);
             if (wallHit.normal.z < 0) rotateLeft = true;
