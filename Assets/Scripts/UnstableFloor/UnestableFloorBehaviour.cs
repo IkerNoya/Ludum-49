@@ -13,7 +13,6 @@ public class UnestableFloorBehaviour : MonoBehaviour
     {
         if(Contains(playerMask, other.gameObject.layer))
         {
-            Debug.Log("HOLA");
             StartCoroutine(InDestroy());
         }
     }
